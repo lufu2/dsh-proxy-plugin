@@ -1,0 +1,18 @@
+# @dsh-plugin/proxy 贡献的组合层（bundle 层）。
+# 本层把 dsh-proxy 插件行插入组合：插件在 apply 时为进程内全局 fetch
+# 设置 undici ProxyAgent，使所有 HTTP 请求走本地代理出口。
+#
+# 代理地址默认【自动检测】：优先跟随 Windows 系统代理（注册表
+# ProxyEnable/ProxyServer，即 Clash 等工具当前设置的端口），每 15 秒重查，
+# 运行中改端口也会自动切换；其次读 HTTPS_PROXY 环境变量；都无则不设代理。
+#
+# 需要手动固定地址时，取消下面 config 的注释并填上代理 URL：
+# - insert:
+#     - id: dsh-proxy
+#       name: '@dsh-plugin/proxy'
+#       config:
+#         proxyUrl: http://127.0.0.1:7897
+#         # checkIntervalMs: 15000   # 系统代理重查间隔（毫秒），可选
+- insert:
+    - id: dsh-proxy
+      name: '@dsh-plugin/proxy'

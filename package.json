@@ -1,0 +1,13 @@
+{
+  "name": "@dsh-plugin/proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH 插件：在 harness 进程内为全局 fetch 设置 undici ProxyAgent，使所有 LLM/HTTP 请求走本地代理出口（解决 OpenRouter 等按出口 IP 的地区限制，如 403 'not available in your region'）。",
+  "main": "index.js",
+  "files": ["index.js", "cordis.patch.yml"],
+  "dependencies": {
+    "undici": "^7.28.0"
+  },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+}
