@@ -38,7 +38,7 @@ fetch（OpenAI SDK / pi-ai / 其他插件）随后全部走该代理。
 
 ```sh
 # 在 dsh 源码 checkout 根目录执行
-pnpm dsh plugin --profile web add dsh-proxy-plugin
+pnpm dsh plugin --profile web add dsh-proxy-plugin的路径
 # 本地 link: 安装不会自动装被链接包的依赖，需在插件目录内补装 undici
 cd dsh-proxy-plugin && pnpm add undici@^7.28.0
 # 重启生效
