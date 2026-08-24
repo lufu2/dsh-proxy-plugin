@@ -35,17 +35,22 @@ undici 的全局 dispatcher 存放在 `Symbol.for('undici.globalDispatcher.2')` 
 fetch（OpenAI SDK / pi-ai / 其他插件）随后全部走该代理。
 
 ## 安装
-
+1、下载本项目
+在项目下运行
 ```sh
-# 在 dsh 源码 checkout 根目录执行
-pnpm dsh plugin --profile web add dsh-proxy-plugin的路径
-# 本地 link: 安装不会自动装被链接包的依赖，需在插件目录内补装 undici
-cd dsh-proxy-plugin && pnpm add undici@^7.28.0
-# 重启生效
+pnpm install 
+```
+安装依赖
+2、添加插件
+到dsh源码目录运行
+```sh
+pnpm dsh plugin --profile web add dsh-proxy-plugin目录的路径
+```
+3、重启dsh
+```sh
 pnpm dsh web
 ```
 
-> 从 npm 发布安装时无需手工补装——`undici` 已声明在 `dependencies`，随包安装。
 
 ## 验证
 
