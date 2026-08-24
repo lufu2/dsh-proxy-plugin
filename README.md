@@ -41,11 +41,13 @@ fetch（OpenAI SDK / pi-ai / 其他插件）随后全部走该代理。
 pnpm install 
 ```
 安装依赖
+
 2、添加插件
 到dsh源码目录运行
 ```sh
 pnpm dsh plugin --profile web add dsh-proxy-plugin目录的路径
 ```
+
 3、重启dsh
 ```sh
 pnpm dsh web
